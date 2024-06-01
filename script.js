@@ -7,3 +7,27 @@
 /* Если кликнуть повторно уже на зачеркнутый, он снова становится обычным */
 
 /* Очищать input после добавления нового элемента в список */
+
+const sendInput = querySelector('#input');
+const item = querySelector('.items');
+const container = querySelector('.groceries');
+
+
+item.addEventListener('enter', function() {
+    const newMessage = document.createElement('div');
+    const messageText = sendInput.value;
+    newMessage.textContent = messageText;
+
+
+    if (messageText != '') {
+        container.append(newMessage);
+    }
+    sendInput.value = '';
+});
+
+const elements = document.querySelectorAll('.items');
+for (let item of elements) {
+item.addEventListener('click', function() {
+item.classList.toggle('done')
+})};
+
