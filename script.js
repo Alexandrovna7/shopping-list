@@ -13,21 +13,18 @@ const item = querySelector('.items');
 const container = querySelector('.groceries');
 
 
-item.addEventListener('enter', function() {
+item.addEventListener('enter', function()) {
     const newMessage = document.createElement('div');
     const messageText = sendInput.value;
     newMessage.textContent = messageText;
 
+    const elements = document.querySelectorAll('.items');
+    item.addEventListener('click', function() {
+        item.classList.toggle('done');
 
     if (messageText != '') {
         container.append(newMessage);
     }
     sendInput.value = '';
 });
-
-const elements = document.querySelectorAll('.items');
-for (let item of elements) {
-item.addEventListener('click', function() {
-item.classList.toggle('done')
-})};
-
+}
