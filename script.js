@@ -9,22 +9,19 @@
 /* Очищать input после добавления нового элемента в список */
 
 const sendInput = querySelector('#input');
-const item = querySelector('.items');
-const container = querySelector('.groceries');
-
-
-item.addEventListener('enter', function()) {
-    const newMessage = document.createElement('div');
-    const messageText = sendInput.value;
-    newMessage.textContent = messageText;
-
-    const elements = document.querySelectorAll('.items');
-    item.addEventListener('click', function() {
-        item.classList.toggle('done');
-
-    if (messageText != '') {
-        container.append(newMessage);
+sendInput.addEventListener('keydown', function(event) {
+    if (event.key == 'Enter') {
+    console.log(event);
     }
-    sendInput.value = '';
+})
+    const newMessage = document.createElement('items');
+    newMessage.addEventListener('click', function() {
+        newMessage.classList.toggle('done');
+        if (messageText != '') {
+            container.append(newMessage);
+        }
+        sendInput.value = '';
 });
-}
+
+
+
