@@ -8,20 +8,25 @@
 
 /* Очищать input после добавления нового элемента в список */
 
-const sendInput = querySelector('#input');
+const sendInput = document.querySelector('#input');
+const item = document.querySelector('.items');
+const container = document.querySelector ('.groceries');
+
 sendInput.addEventListener('keydown', function(event) {
     if (event.key == 'Enter') {
     console.log(event);
     }
-})
-    const newMessage = document.createElement('items');
+});
+    const newMessage = document.createElement('div');
+    const text = newMessage.value;
     newMessage.addEventListener('click', function() {
         newMessage.classList.toggle('done');
+    })
         if (messageText != '') {
             container.append(newMessage);
         }
         sendInput.value = '';
-});
+
 
 
 
